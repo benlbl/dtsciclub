@@ -7,6 +7,9 @@ body {
 
     animation: header 0s ease-out forwards; 
     animation-delay: 2s; /*3s*/
+
+    font-family: "Roboto", sans-serif;
+
 }
 
 .text-body-secondary {
@@ -137,15 +140,24 @@ body {
     background-color: #97a8b7;
     background-color: #526884;
     border-top: 1px solid #ffffff;
-    height: 900px;
 }
 
-h3 {
+h2 {
     font-family: "Roboto", sans-serif;
     text-align: center;
     color: #00d8d4;
     color: #27374D;
     color: white;
+}
+
+#teamlist {
+    border-radius: 20px;
+}
+
+.list-group-item {
+    background: transparent;
+    color: rgb(196, 205, 226);
+
 }
 
 #btn-back-to-top {
@@ -161,7 +173,9 @@ h3 {
     -webkit-backdrop-filter: blur(10.4px) !important;
     border: 1px solid rgba(255, 255, 255, 1) !important;
 }
-
+strong {
+    color: white;
+}
 
 @media (max-width: 576px) {
     #dt {
@@ -180,6 +194,10 @@ h3 {
         font-size: 14px;
         width: 250px;
     }
+    .list-group-item {
+        font-size: 17px !important;
+
+}
 
 }
 
