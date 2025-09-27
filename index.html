@@ -16,6 +16,13 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
+    <!-- inter font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -74,39 +81,154 @@
     </div>
 
     <div class="main-page">
-        <div id="about" class="p-5 pb-3">
+        <div id="about" class="p-5 pb-3 pt-5">
             <h2>About Us</h2>
-            <p class="text-light fs-5">David Thompson Science Club is a community for students who want to explore,
+            <p class="text-light">David Thompson Science Club is a community for students who want to explore,
                 discover, and have fun with science. Our vision is to spark curiosity and make science engaging by going
                 beyond the classroom through hands-on activities, discussions, and creative projects. We also provide
                 support for students preparing for the science fair, making the process more approachable and rewarding.
                 Whether you’re looking to expand your knowledge, share ideas, or simply enjoy science with others, our
                 club offers a welcoming and exciting space to do so.
         </div>
-        <div id="photos" class="p-5 pt-0 pb-3">
+        <div id="photos" class="p-5 pt-0 pb-3 ml-5 mr-5">
             <h2>Photos</h2>
+            <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="logo.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="favicon.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="dt.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
+        <br>
         <div id="team" class="p-5 pt-0 pb-3">
             <h2>2025-26 Executive Team</h2>
-            <div class="d-flex justify-content-center">
-                <ul class="list-group list-group-flush w-70 w-md-25" id="teamlist">
-                    <li class="list-group-item fs-4"><strong>President: </strong>Dewey Liang</li>
-                    <li class="list-group-item fs-5"><strong>Vice Presidents:</strong> Aiden Leong, Timothy Truong</li>
-                    <li class="list-group-item fs-5"><strong>Treasurer:</strong> Kaitlyn Poon</li>
-                    <li class="list-group-item fs-5"><strong>Public Relations:</strong> Alex Wu, Matthew Yip</li>
-                    <li class="list-group-item fs-5"><strong>Secretary:</strong> Kara Wong</li>
-                    <li class="list-group-item fs-5"><strong>Events Coordinator:</strong> Angela Wang</li>
-                    <li class="list-group-item fs-5"><strong>Members at Large:</strong> Joshua Lee, Kaitlyn Yip, Arshiya
-                        Chaudhary</li>
-                </ul>
+            <div class="container">
+                <div class="row g-4">
+                    <!-- President -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Dewey Liang</div>
+                            <div class="team-role">President</div>
+                        </div>
+                    </div>
+
+                    <!-- Vice Presidents -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Aiden Leong</div>
+                            <div class="team-role">Vice President</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Timothy Truong</div>
+                            <div class="team-role">Vice President</div>
+                        </div>
+                    </div>
+
+                    <!-- Treasurer -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Kaitlyn Poon</div>
+                            <div class="team-role">Treasurer</div>
+                        </div>
+                    </div>
+
+                    <!-- Public Relations -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Alex Wu</div>
+                            <div class="team-role">Public Relations</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Matthew Yip</div>
+                            <div class="team-role">Public Relations</div>
+                        </div>
+                    </div>
+
+                    <!-- Secretary -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Kara Wong</div>
+                            <div class="team-role">Secretary</div>
+                        </div>
+                    </div>
+
+                    <!-- Events Coordinator -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Angela Wang</div>
+                            <div class="team-role">Events Coordinator</div>
+                        </div>
+                    </div>
+
+                    <!-- Members at Large -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Joshua Lee</div>
+                            <div class="team-role">Member at Large</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Kaitlyn Yip</div>
+                            <div class="team-role">Member at Large</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Arshiya Chaudhary</div>
+                            <div class="team-role">Member at Large</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-name">Benjamin Lee</div>
+                            <div class="team-role">Tech</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </p>
         </div>
+        <br>
         <div id="connect" class="p-5 pt-0 pb-3 text-center">
             <h2>Connect with Us</h2>
-            <p class="text-light fs-5">Got questions or want to get involved? Reach out to us at 
+            <p class="text-light">Got questions or want to get involved? Reach out to us at
                 <a href="mailto:dtscienceclub@gmail.com" class="text-info">dtscienceclub@gmail.com</a>
- — we’d love to hear from you!</p>
+                — we’d love to hear from you!
+            </p>
         </div>
     </div>
 
@@ -136,7 +258,7 @@
         </footer>
     </div>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-up"
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-up"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"
                 d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
