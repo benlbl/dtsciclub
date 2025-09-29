@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -8,7 +8,8 @@ body {
     background: #1d2d54;
     background: #1a306a;
     background: #000e4b;
-    background: #131a37;
+    background: #1B2A36;
+    background: #162441;
     height: 100%;
 
     animation: header 0s ease-out forwards;
@@ -46,7 +47,7 @@ br {
     background-image: url("dt.jpg");
 
     background-color: #2b3350;
-    background-image: url("header.jpg");
+    background-image: url("header2.jpg");
 
     background-size: cover;
     background-position: center;
@@ -168,14 +169,29 @@ h2 {
     font-weight: bolder;
 }
 
+#about {
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+.img-fluid {
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
 .carousel {
     width: 60%;
+}
+
+.carousel-inner {
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+    border-radius: 10px;
 }
 
 .carousel-inner img {
     object-fit: cover;
     /* fills the area, crops if needed */
     display: block;
+    aspect-ratio: 16 / 9;
     margin: 0 auto;
     /* center if width < container */
 }
@@ -256,7 +272,8 @@ h2 {
     }
 
     .text-light {
-        font-size: 17px !important;
+        font-size: 15px !important;
+        text-align: left;
     }
 
     .p-5 {
@@ -265,10 +282,17 @@ h2 {
 
     #about {
         padding-top: 30px !important;
+        margin-left: 0px;
+        margin-right: 0px;
+
     }
 
     .carousel {
         width: 95%;
+    }
+
+    .carousel-inner img {
+        aspect-ratio: 4 / 3;
     }
 
     .team-card {
