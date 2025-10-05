@@ -12,11 +12,14 @@ body {
     background: #162441;
     height: 100%;
 
-    animation: header 0s ease-out forwards;
-    animation-delay: 2s;
-    /*3s*/
-
     font-family: "Inter", sans-serif;
+
+    background-color: #2b3350;
+    background-image: url("header2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 
 p {
@@ -36,11 +39,56 @@ br {
     border-radius: 100vw !important;
 }
 
+#navbar {
+    margin: 20px auto !important;
+    border-radius: 33px !important;
+    width: 80% !important;
+    background: rgba(255, 255, 255, 0.251) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10.4px) !important;
+    -webkit-backdrop-filter: blur(10.4px) !important;
+    border: 1px solid #ffffff !important;
+
+    opacity: 0;
+    animation: drop2 0.3s ease-out forwards;
+    animation-delay: 2.5s;
+    /*2secs, 3.5*/
+
+}
+
+#navbar a {
+    color: white !important;
+    text-align: center !important;
+}
+
+.navbar-brand {
+    margin-right: 10px !important;
+}
+
+.nav-item {
+    border: 1px solid transparent;
+    border-radius: 100vw;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: auto;
+}
+
+.nav-item:hover {
+    background: #ffffff3f;
+    /*border: 1px solid white;*/
+}
+
 #home {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
     padding: 5vw;
-    height: 100vh;
+    height: 95vh;
     padding-top: 120px;
 
     background-color: #27374D;
@@ -52,15 +100,18 @@ br {
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
+}
 
-    animation: header 0.8s ease-out forwards;
-    animation-delay: 2s;
-    /*height: 600px;*/
+.spacer {
+    height: 40px;
+}
+
+#home-text {
+    border-bottom: 100px;
 }
 
 #home h1 {
     line-height: 90%;
-    border-bottom: 100px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -110,46 +161,43 @@ br {
     display: none;
 }
 
-#navbar {
-    margin: 20px auto !important;
-    border-radius: 33px !important;
-    width: 80% !important;
-    background: rgba(255, 255, 255, 0.251) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: blur(10.4px) !important;
-    -webkit-backdrop-filter: blur(10.4px) !important;
-    border: 1px solid #ffffff !important;
 
+
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
     opacity: 0;
     animation: drop2 0.3s ease-out forwards;
     animation-delay: 2.5s;
-    /*2secs, 3.5*/
-
 }
 
-#navbar a {
-    color: white !important;
-    text-align: center !important;
+.scroll-down span {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite;
 }
 
-.navbar-brand {
-    margin-right: 10px !important;
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(12px) translateX(12px);
+    }
 }
 
-.nav-item {
-    border: 1px solid transparent;
-    border-radius: 100vw;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    margin: auto;
-}
 
-.nav-item:hover {
-    background: #ffffff3f;
-    /*border: 1px solid white;*/
-}
+
+
 
 .main-page {
     background-color: #4d5671;
@@ -159,6 +207,7 @@ br {
     background-color: #526884;
     background-color: #324d62;
     border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
 h2 {
@@ -264,11 +313,6 @@ h2 {
     .list-group-item {
         font-size: 17px !important;
 
-    }
-
-    #home {
-        animation: header-mobile 0.8s ease-out forwards;
-        animation-delay: 2s;
     }
 
     .text-light {
