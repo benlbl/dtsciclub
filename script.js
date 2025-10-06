@@ -34,3 +34,31 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // stop default anchor behavior
+    const targetId = this.getAttribute('href').substring(1); // e.g. "about"
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      // Remove hash from URL
+      history.pushState(null, '', ' ');
+    }
+  });
+});
+
+document.querySelectorAll('.scroll-down').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // stop default anchor behavior
+    const targetId = this.getAttribute('href').substring(1); // e.g. "about"
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      // Remove hash from URL
+      history.pushState(null, '', ' ');
+    }
+  });
+});

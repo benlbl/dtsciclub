@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Glassmorphic Contact Buttons with Brand Tint</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --btn-size: 140px;
+            --nudge-max: 8px;
+            --transition: 220ms cubic-bezier(.2, .9, .2, 1);
+            --radius: 16px;
+            --default-color: #fff;
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: #ffffff;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            font-family: system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-btn {
+            width: var(--btn-size);
+            height: var(--btn-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+
+            background: var(--glass-bg);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10.4px);
+            -webkit-backdrop-filter: blur(10.4px);
+            border: 1px solid var(--glass-border);
+
+            color: var(--default-color);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            text-align: center;
+            transition: transform var(--transition), color var(--transition), background var(--transition), -webkit-text-fill-color var(--transition);
+            will-change: transform;
+        }
+
+        .btn-inner i {
+            font-size: 1.8rem;
+            transition: inherit;
+        }
+
+        .btn-inner span {
+            font-size: 0.95rem;
+            transition: inherit;
+        }
+
+        /* --- Brand Hover Colors --- */
+        /* Instagram */
+        .contact-btn.instagram:hover,
+        .contact-btn.instagram:active {
+            background: rgba(193, 53, 132, 0.25);
+            border-color: #c13584;
+        }
+
+        .contact-btn.instagram:hover .btn-inner,
+        .contact-btn.instagram:active .btn-inner {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Discord */
+        .contact-btn.discord:hover,
+        .contact-btn.discord:active {
+            background: rgba(88, 101, 242, 0.25);
+            border-color: #5865F2;
+            color: #5865F2;
+        }
+
+        .contact-btn.discord:hover .btn-inner,
+        .contact-btn.discord:active .btn-inner {
+            color: #5865F2;
+        }
+
+        /* Email */
+        .contact-btn.email:hover,
+        .contact-btn.email:active {
+            background: rgba(217, 48, 37, 0.25);
+            border-color: #d93025;
+            color: #d93025;
+        }
+
+        .contact-btn.email:hover .btn-inner,
+        .contact-btn.email:active .btn-inner {
+            color: #d93025;
+        }
+
+        .contact-btn:focus {
+            outline: 3px solid rgba(255, 255, 255, 0.4);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .contact-btn,
+            .btn-inner {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-row">
+        <a class="contact-btn instagram" href="https://instagram.com" target="_blank">
+            <span class="btn-inner">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </span>
+        </a>
+
+        <a class="contact-btn discord" href="https://discord.com" target="_blank">
+            <span class="btn-inner">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </span>
+        </a>
+
+        <a class="contact-btn email" href="mailto:you@example.com">
+            <span class="btn-inner">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </span>
+        </a>
+    </div>
+
+    <script>
+        // Nudge text+icon toward cursor
+        (function () {
+            const buttons = document.querySelectorAll('.contact-btn');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) return;
+
+            buttons.forEach(btn => {
+                const inner = btn.querySelector('.btn-inner');
+
+                function onPointerMove(e) {
+                    const rect = btn.getBoundingClientRect();
+                    const xRel = (e.clientX - rect.left) / rect.width;
+                    const yRel = (e.clientY - rect.top) / rect.height;
+
+                    const dx = (xRel - 0.5) * 2;
+                    const dy = (yRel - 0.5) * 2;
+
+                    const max = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nudge-max')) || 8;
+                    const tx = Math.max(-max, Math.min(max, dx * max * 0.6));
+                    const ty = Math.max(-max, Math.min(max, dy * max * 0.6));
+
+                    inner.style.transform = `translate(${tx}px, ${ty}px)`;
+                }
+
+                function onLeave() { inner.style.transform = ''; }
+
+                btn.addEventListener('pointermove', onPointerMove, { passive: true });
+                btn.addEventListener('pointerleave', onLeave);
+                btn.addEventListener('pointercancel', onLeave);
+                btn.addEventListener('focus', () => { inner.style.transform = 'translate(4px,0)'; });
+                btn.addEventListener('blur', onLeave);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
