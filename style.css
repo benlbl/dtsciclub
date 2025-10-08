@@ -15,7 +15,7 @@ body {
     font-family: "Inter", sans-serif;
 
     background:
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        linear-gradient(rgba(0, 0, 0, 0.437), rgba(0, 0, 0, 0.322)),
         /* 60% black overlay */
         url("header2.jpg") center/cover no-repeat;
     background-color: black;
@@ -50,7 +50,7 @@ br {
     -webkit-backdrop-filter: blur(10.4px) !important;
     border: 1px solid #ffffff !important;
 
-    opacity: 0;
+    /*opacity: 0;
     animation: drop2 0.3s ease-out forwards;
     animation-delay: 2.5s;
     /*2secs, 3.5*/
@@ -75,6 +75,7 @@ br {
     transition: all 0.3s ease;
     margin: auto;
 }
+
 
 .nav-item:hover {
     background: #ffffff3f;
@@ -233,7 +234,9 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 1) !important;
 }
 
-#photos, #team, #connect {
+#photos,
+#team,
+#connect {
     scroll-margin-top: 100px;
 }
 
@@ -349,20 +352,37 @@ h2 {
         aspect-ratio: 4 / 3;
     }
 
+
     .team-card {
-        padding: 0.5rem 0.75rem;
-        /* less vertical space */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 1rem;
+        height: auto;
+        min-height: 40px;
+        /* keeps all cards consistently small */
+        border-radius: 100vh;
+        text-align: left;
+        box-shadow: none;
+        /* optional: cleaner list look */
     }
 
     .team-name {
-        margin-bottom: 0.25rem;
-        /* tighten spacing between name and role */
+        font-size: 0.95rem;
+        margin: 0;
+        font-weight: 600;
+        color: white;
     }
 
     .team-role {
+        font-size: 0.9rem;
+        color: #cfcfcf;
         margin: 0;
-        /* remove default bottom margins */
+        text-align: right;
     }
+
+
 }
 
 @keyframes drop {
