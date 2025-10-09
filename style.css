@@ -108,7 +108,7 @@ br {
     height: 95vh;
     padding-top: 120px;
 
-    background-color: #27374D;
+    /*background-color: #27374D;
     background-image: url("dt.jpg");
 
     background-color: #2b3350;
@@ -116,7 +116,7 @@ br {
 
     background-size: cover;
     background-position: center;
-    background-blend-mode: multiply;
+    background-blend-mode: multiply;*/
 }
 
 .spacer {
@@ -320,6 +320,14 @@ h2 {
 .team-role {
     font-size: 0.95rem;
     color: #ececec;
+}
+
+#cred {
+    font-size: 0.8rem !important; 
+    margin-top: -18px !important; 
+    margin-bottom: 0 !important;
+    color: rgb(97, 185, 212);
+    display: none;
 }
 
 @media (max-width: 576px) {
