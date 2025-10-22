@@ -22,7 +22,7 @@ function scrollFunction() {
     document.body.scrollTop > 700 ||
     document.documentElement.scrollTop > 700
   ) {
-    mybutton.style.display = "block";
+    mybutton.style.display = "none"; /*block*/
   } else {
     mybutton.style.display = "none";
   }
